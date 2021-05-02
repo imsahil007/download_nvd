@@ -1,0 +1,33 @@
+name: download-cve-data
+on: 
+  schedule:
+    - cron: "0 0 * * *"
+    # end of every day
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2.2.2
+        with:
+          python-version: '3.x'
+      - run:  |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python main.py
+      - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version
+        with:
+
+          add: '.'
+
+          author_name:  Sahil
+
+          author_email: sahils.1997.s@gmail.com
+
+          branch: master
+
+          default_author: user_info
+
+          message: 'Update CVE Data'
+

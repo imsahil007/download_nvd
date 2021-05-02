@@ -1,0 +1,4 @@
+rich
+beautifulsoup4
+aiohttp[speedups]>=3.7.4
+
