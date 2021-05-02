@@ -1,7 +1,7 @@
 name: download-cve-data
 on: 
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "* * * * *"
     # end of every day
 
 jobs:
