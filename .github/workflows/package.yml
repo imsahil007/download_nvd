@@ -54,6 +54,7 @@ jobs:
         name: Generate index.html
         run: |
           mv cve-bin-tool-db/dist/ public/
+          cd public/
           python -m http.server 8080 &
           sleep 0.5
           curl -vfLo index.html http://127.0.0.1:8080/
