@@ -33,7 +33,7 @@ jobs:
       -
         name: Download dependencies
         run: |
-          pip install -U pip setuptools wheel
+          pip install -U pip setuptools wheel build
           pip install "https://github.com/intel/cve-bin-tool/archive/main.zip#egg=cve-bin-tool" "https://github.com/intel/dffml/archive/66f965a4364dfb53ea2fc3343f1ecfc02bb9b83a.zip#egg=dffml"
       -
         name: Download NVD
