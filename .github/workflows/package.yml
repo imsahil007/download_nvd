@@ -56,7 +56,7 @@ jobs:
           mv cve-bin-tool-db/dist/ public/
           python -m http.server 8080 &
           sleep 0.5
-          curl -vfLO http://127.0.0.1:8080/index.html
+          curl -vfLo index.html http://127.0.0.1:8080/
           kill %1
       -
         name: Deploy to GitHub Pages
