@@ -61,7 +61,7 @@ jobs:
           kill %1
           export REPO_NAME=$(echo $GITHUB_REPOSITORY | sed -e 's/.*\///g')
           export REPO_OWNER=$(echo $GITHUB_REPOSITORY | sed -e 's/\/.*//g')
-          sed -i -e 's/h1>/pre>/g' -e "s#Directory listing for /#pip install --find-links https://${REPO_OWNER}.github.io/${REPO_NAME}/ cve-bin-tool-db<br>python -c \'import os, shutil, cve_bin_tool.cvedb, cve_bin_tool_db; shutil.rmtree(cve_bin_tool.cvedb.DISK_LOCATION_DEFAULT); shutil.copytree(os.path.join(cve_bin_tool_db.__path__[0], "db"), cve_bin_tool.cvedb.DISK_LOCATION_DEFAULT)\''#g" index.html
+          sed -i -e 's/h1>/pre>/g' -e "s#Directory listing for /#pip install --force-reinstall --find-links https://${REPO_OWNER}.github.io/${REPO_NAME}/ cve-bin-tool-db<br>python -c \'import os, shutil, cve_bin_tool.cvedb, cve_bin_tool_db; shutil.rmtree(cve_bin_tool.cvedb.DISK_LOCATION_DEFAULT); shutil.copytree(os.path.join(cve_bin_tool_db.__path__[0], \"db\"), cve_bin_tool.cvedb.DISK_LOCATION_DEFAULT)\'#g" index.html
           cat index.html
           find .
       -
