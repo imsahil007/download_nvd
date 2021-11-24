@@ -52,7 +52,7 @@ jobs:
           python -m build
       -
         name: Generate index.html
-        run: 
+        run: |
           mv cve-bin-tool-db/dist/ public/
           python -m http.server 8080 &
           sleep 0.5
