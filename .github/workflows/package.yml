@@ -61,7 +61,7 @@ jobs:
           kill %1
           export REPO_NAME=$(echo $GITHUB_REPOSITORY | sed -e 's/.*\///g')
           export REPO_OWNER=$(echo $GITHUB_REPOSITORY | sed -e 's/\/.*//g')
-          sed -i "s#Directory listing for /#$ pip install --find-links https://${REPO_OWNER}.github.io/${REPO_NAME}/ cve-bin-tool-db#g" index.html
+          sed -i "s#Directory listing for /#$ pip install --force-reinstall --find-links https://${REPO_OWNER}.github.io/${REPO_NAME}/ cve-bin-tool-db#g" index.html
           cat index.html
           find .
       -
